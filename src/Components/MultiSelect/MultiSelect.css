@@ -36,6 +36,7 @@
     overflow-y: auto;
     transition: all 200ms;
     background-color: white;
+    z-index: 25;
 }
 .multiSelectOption {
     height: 30px;

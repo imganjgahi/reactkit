@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Form, { FormItem } from './Components/Form/Form'
 import MultiSelect from './Components/MultiSelect/MultiSelect';
+import Select from './Components/Select/Select';
 const fakeData = [
   { id: "1", title: "Red" },
   { id: "2", title: "Green" },
@@ -31,6 +32,9 @@ const App: React.FC = () => {
           <FormItem name="optionList"
             rules={[{ required: true, msg: "optionList is require" }]}
             component={ <MultiSelect optionList={fakeData} />} />
+          <FormItem name="Select" label="User Select"
+            rules={[{ required: true, msg: "Select is require" }]}
+            component={ <Select optionList={fakeData} />} />
   
         <button>Submin</button>
       </Form>
