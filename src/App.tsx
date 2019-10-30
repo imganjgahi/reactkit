@@ -30,9 +30,11 @@ const App: React.FC = () => {
             component={<input className="txtInput" type="text" onChange={(e) => console.log("Input Changed", e.target.name)} />} />
 
           <FormItem name="optionList"
+            initialValue="5,2"
             rules={[{ required: true, msg: "optionList is require" }]}
             component={ <MultiSelect optionList={fakeData} />} />
           <FormItem name="Select" label="User Select"
+            initialValue="2"
             rules={[{ required: true, msg: "Select is require" }]}
             component={ <Select optionList={fakeData} />} />
   

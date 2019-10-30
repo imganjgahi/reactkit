@@ -92,6 +92,7 @@ export default class Form extends React.Component<IProps, IState>{
                 const El = React.cloneElement(comp, {
                     id: comp.props.id ? comp.props.id : child.props.name,
                     name: child.props.name,
+                    initialValue: child.props.initialValue ? child.props.initialValue : "",
                     onChange: (e: any) => {
                         if(comp.props.onChange){
                             comp.props.onChange(e)

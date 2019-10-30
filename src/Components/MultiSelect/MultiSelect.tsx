@@ -7,7 +7,7 @@ export interface IProps {
     onChange?: any;
     displayProp?: string;
     valueProp?: string;
-    initialValue?: Array<number | string>;
+    initialValue?: string;
     authorization?: string;
 }
 
@@ -73,7 +73,7 @@ class MultiSelect extends React.Component<IProps, IState> {
         const items: any[] = [];
         let displayValue: any[] = [];
         if (this.props.initialValue !== undefined) {
-            this.props.initialValue.forEach((item: any) => {
+            this.props.initialValue.toString().split(",").forEach((item: any) => {
                 if(this.state.optionList.length > 0){
                     const valueItem = this.state.optionList.filter(
                         x => this.props.initialValue && x[valueProp].toString() ===
@@ -195,7 +195,7 @@ class MultiSelect extends React.Component<IProps, IState> {
                     })}
                     <input
                         tabIndex={0}
-                        onBlur={this.hideOption}
+                        // onBlur={this.hideOption}
                         style={{
                             display: this.state.showInput ? "block" : "none",
                             width: this.state.searchValue.length === 0 ? "19px" : (this.state.searchValue.length * 9) + "px"
